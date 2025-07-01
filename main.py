@@ -1,0 +1,93 @@
+import pandas as pd
+import numpy as np
+
+df = pd.read_csv('mnist_test.csv')
+weigh = np.zeros((10 , 784 ))
+print(str(df))
+alfa = 0.00000001
+print(df['28x22'][0])
+
+def w_sum(input , weigh):
+  assert(len(input) == len(weigh))
+  out = 0
+  for i in range(len(input)):
+    if( input[i] != input[i]):
+      print("INPUT NAN")
+      exit()
+    out  = out +( input[i] * weigh[i])
+  return out
+
+
+def nerual_network(input , weigh):
+  return (w_sum(input , weigh) )
+
+def lrn (a ):
+  global df
+  global weigh
+  withe = 0
+  for i in range(a):
+    
+    input =[ df ['1x1'][i] , df ['1x2'][i] , df ['1x3'][i] , df ['1x4'][i] , df ['1x5'][i] , df ['1x6'][i] , df ['1x7'][i] , df ['1x8'][i] , df ['1x9'][i] , df ['1x10'][i] , df ['1x11'][i] , df ['1x12'][i] , df ['1x13'][i] , df ['1x14'][i] , df ['1x15'][i] , df ['1x16'][i] , df ['1x17'][i] , df ['1x18'][i] , df ['1x19'][i] , df ['1x20'][i] , df ['1x21'][i] , df ['1x22'][i] , df ['1x23'][i] , df ['1x24'][i] , df ['1x25'][i] , df ['1x26'][i] , df ['1x27'][i] , df ['1x28'][i] , df ['2x1'][i] , df ['2x2'][i] , df ['2x3'][i] , df ['2x4'][i] , df ['2x5'][i] , df ['2x6'][i] , df ['2x7'][i] , df ['2x8'][i] , df ['2x9'][i] , df ['2x10'][i] , df ['2x11'][i] , df ['2x12'][i] , df ['2x13'][i] , df ['2x14'][i] , df ['2x15'][i] , df ['2x16'][i] , df ['2x17'][i] , df ['2x18'][i] , df ['2x19'][i] , df ['2x20'][i] , df ['2x21'][i] , df ['2x22'][i] , df ['2x23'][i] , df ['2x24'][i] , df ['2x25'][i] , df ['2x26'][i] , df ['2x27'][i] , df ['2x28'][i] , df ['3x1'][i] , df ['3x2'][i] , df ['3x3'][i] , df ['3x4'][i] , df ['3x5'][i] , df ['3x6'][i] , df ['3x7'][i] , df ['3x8'][i] , df ['3x9'][i] , df ['3x10'][i] , df ['3x11'][i] , df ['3x12'][i] , df ['3x13'][i] , df ['3x14'][i] , df ['3x15'][i] , df ['3x16'][i] , df ['3x17'][i] , df ['3x18'][i] , df ['3x19'][i] , df ['3x20'][i] , df ['3x21'][i] , df ['3x22'][i] , df ['3x23'][i] , df ['3x24'][i] , df ['3x25'][i] , df ['3x26'][i] , df ['3x27'][i] , df ['3x28'][i] , df ['4x1'][i] , df ['4x2'][i] , df ['4x3'][i] , df ['4x4'][i] , df ['4x5'][i] , df ['4x6'][i] , df ['4x7'][i] , df ['4x8'][i] , df ['4x9'][i] , df ['4x10'][i] , df ['4x11'][i] , df ['4x12'][i] , df ['4x13'][i] , df ['4x14'][i] , df ['4x15'][i] , df ['4x16'][i] , df ['4x17'][i] , df ['4x18'][i] , df ['4x19'][i] , df ['4x20'][i] , df ['4x21'][i] , df ['4x22'][i] , df ['4x23'][i] , df ['4x24'][i] , df ['4x25'][i] , df ['4x26'][i] , df ['4x27'][i] , df ['4x28'][i] , df ['5x1'][i] , df ['5x2'][i] , df ['5x3'][i] , df ['5x4'][i] , df ['5x5'][i] , df ['5x6'][i] , df ['5x7'][i] , df ['5x8'][i] , df ['5x9'][i] , df ['5x10'][i] , df ['5x11'][i] , df ['5x12'][i] , df ['5x13'][i] , df ['5x14'][i] , df ['5x15'][i] , df ['5x16'][i] , df ['5x17'][i] , df ['5x18'][i] , df ['5x19'][i] , df ['5x20'][i] , df ['5x21'][i] , df ['5x22'][i] , df ['5x23'][i] , df ['5x24'][i] , df ['5x25'][i] , df ['5x26'][i] , df ['5x27'][i] , df ['5x28'][i] , df ['6x1'][i] , df ['6x2'][i] , df ['6x3'][i] , df ['6x4'][i] , df ['6x5'][i] , df ['6x6'][i] , df ['6x7'][i] , df ['6x8'][i] , df ['6x9'][i] , df ['6x10'][i] , df ['6x11'][i] , df ['6x12'][i] , df ['6x13'][i] , df ['6x14'][i] , df ['6x15'][i] , df ['6x16'][i] , df ['6x17'][i] , df ['6x18'][i] , df ['6x19'][i] , df ['6x20'][i] , df ['6x21'][i] , df ['6x22'][i] , df ['6x23'][i] , df ['6x24'][i] , df ['6x25'][i] , df ['6x26'][i] , df ['6x27'][i] , df ['6x28'][i] , df ['7x1'][i] , df ['7x2'][i] , df ['7x3'][i] , df ['7x4'][i] , df ['7x5'][i] , df ['7x6'][i] , df ['7x7'][i] , df ['7x8'][i] , df ['7x9'][i] , df ['7x10'][i] , df ['7x11'][i] , df ['7x12'][i] , df ['7x13'][i] , df ['7x14'][i] , df ['7x15'][i] , df ['7x16'][i] , df ['7x17'][i] , df ['7x18'][i] , df ['7x19'][i] , df ['7x20'][i] , df ['7x21'][i] , df ['7x22'][i] , df ['7x23'][i] , df ['7x24'][i] , df ['7x25'][i] , df ['7x26'][i] , df ['7x27'][i] , df ['7x28'][i] , df ['8x1'][i] , df ['8x2'][i] , df ['8x3'][i] , df ['8x4'][i] , df ['8x5'][i] , df ['8x6'][i] , df ['8x7'][i] , df ['8x8'][i] , df ['8x9'][i] , df ['8x10'][i] , df ['8x11'][i] , df ['8x12'][i] , df ['8x13'][i] , df ['8x14'][i] , df ['8x15'][i] , df ['8x16'][i] , df ['8x17'][i] , df ['8x18'][i] , df ['8x19'][i] , df ['8x20'][i] , df ['8x21'][i] , df ['8x22'][i] , df ['8x23'][i] , df ['8x24'][i] , df ['8x25'][i] , df ['8x26'][i] , df ['8x27'][i] , df ['8x28'][i] , df ['9x1'][i] , df ['9x2'][i] , df ['9x3'][i] , df ['9x4'][i] , df ['9x5'][i] , df ['9x6'][i] , df ['9x7'][i] , df ['9x8'][i] , df ['9x9'][i] , df ['9x10'][i] , df ['9x11'][i] , df ['9x12'][i] , df ['9x13'][i] , df ['9x14'][i] , df ['9x15'][i] , df ['9x16'][i] , df ['9x17'][i] , df ['9x18'][i] , df ['9x19'][i] , df ['9x20'][i] , df ['9x21'][i] , df ['9x22'][i] , df ['9x23'][i] , df ['9x24'][i] , df ['9x25'][i] , df ['9x26'][i] , df ['9x27'][i] , df ['9x28'][i] , df ['10x1'][i] , df ['10x2'][i] , df ['10x3'][i] , df ['10x4'][i] , df ['10x5'][i] , df ['10x6'][i] , df ['10x7'][i] , df ['10x8'][i] , df ['10x9'][i] , df ['10x10'][i] , df ['10x11'][i] , df ['10x12'][i] , df ['10x13'][i] , df ['10x14'][i] , df ['10x15'][i] , df ['10x16'][i] , df ['10x17'][i] , df ['10x18'][i] , df ['10x19'][i] , df ['10x20'][i] , df ['10x21'][i] , df ['10x22'][i] , df ['10x23'][i] , df ['10x24'][i] , df ['10x25'][i] , df ['10x26'][i] , df ['10x27'][i] , df ['10x28'][i] , df ['11x1'][i] , df ['11x2'][i] , df ['11x3'][i] , df ['11x4'][i] , df ['11x5'][i] , df ['11x6'][i] , df ['11x7'][i] , df ['11x8'][i] , df ['11x9'][i] , df ['11x10'][i] , df ['11x11'][i] , df ['11x12'][i] , df ['11x13'][i] , df ['11x14'][i] , df ['11x15'][i] , df ['11x16'][i] , df ['11x17'][i] , df ['11x18'][i] , df ['11x19'][i] , df ['11x20'][i] , df ['11x21'][i] , df ['11x22'][i] , df ['11x23'][i] , df ['11x24'][i] , df ['11x25'][i] , df ['11x26'][i] , df ['11x27'][i] , df ['11x28'][i] , df ['12x1'][i] , df ['12x2'][i] , df ['12x3'][i] , df ['12x4'][i] , df ['12x5'][i] , df ['12x6'][i] , df ['12x7'][i] , df ['12x8'][i] , df ['12x9'][i] , df ['12x10'][i] , df ['12x11'][i] , df ['12x12'][i] , df ['12x13'][i] , df ['12x14'][i] , df ['12x15'][i] , df ['12x16'][i] , df ['12x17'][i] , df ['12x18'][i] , df ['12x19'][i] , df ['12x20'][i] , df ['12x21'][i] , df ['12x22'][i] , df ['12x23'][i] , df ['12x24'][i] , df ['12x25'][i] , df ['12x26'][i] , df ['12x27'][i] , df ['12x28'][i] , df ['13x1'][i] , df ['13x2'][i] , df ['13x3'][i] , df ['13x4'][i] , df ['13x5'][i] , df ['13x6'][i] , df ['13x7'][i] , df ['13x8'][i] , df ['13x9'][i] , df ['13x10'][i] , df ['13x11'][i] , df ['13x12'][i] , df ['13x13'][i] , df ['13x14'][i] , df ['13x15'][i] , df ['13x16'][i] , df ['13x17'][i] , df ['13x18'][i] , df ['13x19'][i] , df ['13x20'][i] , df ['13x21'][i] , df ['13x22'][i] , df ['13x23'][i] , df ['13x24'][i] , df ['13x25'][i] , df ['13x26'][i] , df ['13x27'][i] , df ['13x28'][i] , df ['14x1'][i] , df ['14x2'][i] , df ['14x3'][i] , df ['14x4'][i] , df ['14x5'][i] , df ['14x6'][i] , df ['14x7'][i] , df ['14x8'][i] , df ['14x9'][i] , df ['14x10'][i] , df ['14x11'][i] , df ['14x12'][i] , df ['14x13'][i] , df ['14x14'][i] , df ['14x15'][i] , df ['14x16'][i] , df ['14x17'][i] , df ['14x18'][i] , df ['14x19'][i] , df ['14x20'][i] , df ['14x21'][i] , df ['14x22'][i] , df ['14x23'][i] , df ['14x24'][i] , df ['14x25'][i] , df ['14x26'][i] , df ['14x27'][i] , df ['14x28'][i] , df ['15x1'][i] , df ['15x2'][i] , df ['15x3'][i] , df ['15x4'][i] , df ['15x5'][i] , df ['15x6'][i] , df ['15x7'][i] , df ['15x8'][i] , df ['15x9'][i] , df ['15x10'][i] , df ['15x11'][i] , df ['15x12'][i] , df ['15x13'][i] , df ['15x14'][i] , df ['15x15'][i] , df ['15x16'][i] , df ['15x17'][i] , df ['15x18'][i] , df ['15x19'][i] , df ['15x20'][i] , df ['15x21'][i] , df ['15x22'][i] , df ['15x23'][i] , df ['15x24'][i] , df ['15x25'][i] , df ['15x26'][i] , df ['15x27'][i] , df ['15x28'][i] , df ['16x1'][i] , df ['16x2'][i] , df ['16x3'][i] , df ['16x4'][i] , df ['16x5'][i] , df ['16x6'][i] , df ['16x7'][i] , df ['16x8'][i] , df ['16x9'][i] , df ['16x10'][i] , df ['16x11'][i] , df ['16x12'][i] , df ['16x13'][i] , df ['16x14'][i] , df ['16x15'][i] , df ['16x16'][i] , df ['16x17'][i] , df ['16x18'][i] , df ['16x19'][i] , df ['16x20'][i] , df ['16x21'][i] , df ['16x22'][i] , df ['16x23'][i] , df ['16x24'][i] , df ['16x25'][i] , df ['16x26'][i] , df ['16x27'][i] , df ['16x28'][i] , df ['17x1'][i] , df ['17x2'][i] , df ['17x3'][i] , df ['17x4'][i] , df ['17x5'][i] , df ['17x6'][i] , df ['17x7'][i] , df ['17x8'][i] , df ['17x9'][i] , df ['17x10'][i] , df ['17x11'][i] , df ['17x12'][i] , df ['17x13'][i] , df ['17x14'][i] , df ['17x15'][i] , df ['17x16'][i] , df ['17x17'][i] , df ['17x18'][i] , df ['17x19'][i] , df ['17x20'][i] , df ['17x21'][i] , df ['17x22'][i] , df ['17x23'][i] , df ['17x24'][i] , df ['17x25'][i] , df ['17x26'][i] , df ['17x27'][i] , df ['17x28'][i] , df ['18x1'][i] , df ['18x2'][i] , df ['18x3'][i] , df ['18x4'][i] , df ['18x5'][i] , df ['18x6'][i] , df ['18x7'][i] , df ['18x8'][i] , df ['18x9'][i] , df ['18x10'][i] , df ['18x11'][i] , df ['18x12'][i] , df ['18x13'][i] , df ['18x14'][i] , df ['18x15'][i] , df ['18x16'][i] , df ['18x17'][i] , df ['18x18'][i] , df ['18x19'][i] , df ['18x20'][i] , df ['18x21'][i] , df ['18x22'][i] , df ['18x23'][i] , df ['18x24'][i] , df ['18x25'][i] , df ['18x26'][i] , df ['18x27'][i] , df ['18x28'][i] , df ['19x1'][i] , df ['19x2'][i] , df ['19x3'][i] , df ['19x4'][i] , df ['19x5'][i] , df ['19x6'][i] , df ['19x7'][i] , df ['19x8'][i] , df ['19x9'][i] , df ['19x10'][i] , df ['19x11'][i] , df ['19x12'][i] , df ['19x13'][i] , df ['19x14'][i] , df ['19x15'][i] , df ['19x16'][i] , df ['19x17'][i] , df ['19x18'][i] , df ['19x19'][i] , df ['19x20'][i] , df ['19x21'][i] , df ['19x22'][i] , df ['19x23'][i] , df ['19x24'][i] , df ['19x25'][i] , df ['19x26'][i] , df ['19x27'][i] , df ['19x28'][i] , df ['20x1'][i] , df ['20x2'][i] , df ['20x3'][i] , df ['20x4'][i] , df ['20x5'][i] , df ['20x6'][i] , df ['20x7'][i] , df ['20x8'][i] , df ['20x9'][i] , df ['20x10'][i] , df ['20x11'][i] , df ['20x12'][i] , df ['20x13'][i] , df ['20x14'][i] , df ['20x15'][i] , df ['20x16'][i] , df ['20x17'][i] , df ['20x18'][i] , df ['20x19'][i] , df ['20x20'][i] , df ['20x21'][i] , df ['20x22'][i] , df ['20x23'][i] , df ['20x24'][i] , df ['20x25'][i] , df ['20x26'][i] , df ['20x27'][i] , df ['20x28'][i] , df ['21x1'][i] , df ['21x2'][i] , df ['21x3'][i] , df ['21x4'][i] , df ['21x5'][i] , df ['21x6'][i] , df ['21x7'][i] , df ['21x8'][i] , df ['21x9'][i] , df ['21x10'][i] , df ['21x11'][i] , df ['21x12'][i] , df ['21x13'][i] , df ['21x14'][i] , df ['21x15'][i] , df ['21x16'][i] , df ['21x17'][i] , df ['21x18'][i] , df ['21x19'][i] , df ['21x20'][i] , df ['21x21'][i] , df ['21x22'][i] , df ['21x23'][i] , df ['21x24'][i] , df ['21x25'][i] , df ['21x26'][i] , df ['21x27'][i] , df ['21x28'][i] , df ['22x1'][i] , df ['22x2'][i] , df ['22x3'][i] , df ['22x4'][i] , df ['22x5'][i] , df ['22x6'][i] , df ['22x7'][i] , df ['22x8'][i] , df ['22x9'][i] , df ['22x10'][i] , df ['22x11'][i] , df ['22x12'][i] , df ['22x13'][i] , df ['22x14'][i] , df ['22x15'][i] , df ['22x16'][i] , df ['22x17'][i] , df ['22x18'][i] , df ['22x19'][i] , df ['22x20'][i] , df ['22x21'][i] , df ['22x22'][i] , df ['22x23'][i] , df ['22x24'][i] , df ['22x25'][i] , df ['22x26'][i] , df ['22x27'][i] , df ['22x28'][i] , df ['23x1'][i] , df ['23x2'][i] , df ['23x3'][i] , df ['23x4'][i] , df ['23x5'][i] , df ['23x6'][i] , df ['23x7'][i] , df ['23x8'][i] , df ['23x9'][i] , df ['23x10'][i] , df ['23x11'][i] , df ['23x12'][i] , df ['23x13'][i] , df ['23x14'][i] , df ['23x15'][i] , df ['23x16'][i] , df ['23x17'][i] , df ['23x18'][i] , df ['23x19'][i] , df ['23x20'][i] , df ['23x21'][i] , df ['23x22'][i] , df ['23x23'][i] , df ['23x24'][i] , df ['23x25'][i] , df ['23x26'][i] , df ['23x27'][i] , df ['23x28'][i] , df ['24x1'][i] , df ['24x2'][i] , df ['24x3'][i] , df ['24x4'][i] , df ['24x5'][i] , df ['24x6'][i] , df ['24x7'][i] , df ['24x8'][i] , df ['24x9'][i] , df ['24x10'][i] , df ['24x11'][i] , df ['24x12'][i] , df ['24x13'][i] , df ['24x14'][i] , df ['24x15'][i] , df ['24x16'][i] , df ['24x17'][i] , df ['24x18'][i] , df ['24x19'][i] , df ['24x20'][i] , df ['24x21'][i] , df ['24x22'][i] , df ['24x23'][i] , df ['24x24'][i] , df ['24x25'][i] , df ['24x26'][i] , df ['24x27'][i] , df ['24x28'][i] , df ['25x1'][i] , df ['25x2'][i] , df ['25x3'][i] , df ['25x4'][i] , df ['25x5'][i] , df ['25x6'][i] , df ['25x7'][i] , df ['25x8'][i] , df ['25x9'][i] , df ['25x10'][i] , df ['25x11'][i] , df ['25x12'][i] , df ['25x13'][i] , df ['25x14'][i] , df ['25x15'][i] , df ['25x16'][i] , df ['25x17'][i] , df ['25x18'][i] , df ['25x19'][i] , df ['25x20'][i] , df ['25x21'][i] , df ['25x22'][i] , df ['25x23'][i] , df ['25x24'][i] , df ['25x25'][i] , df ['25x26'][i] , df ['25x27'][i] , df ['25x28'][i] , df ['26x1'][i] , df ['26x2'][i] , df ['26x3'][i] , df ['26x4'][i] , df ['26x5'][i] , df ['26x6'][i] , df ['26x7'][i] , df ['26x8'][i] , df ['26x9'][i] , df ['26x10'][i] , df ['26x11'][i] , df ['26x12'][i] , df ['26x13'][i] , df ['26x14'][i] , df ['26x15'][i] , df ['26x16'][i] , df ['26x17'][i] , df ['26x18'][i] , df ['26x19'][i] , df ['26x20'][i] , df ['26x21'][i] , df ['26x22'][i] , df ['26x23'][i] , df ['26x24'][i] , df ['26x25'][i] , df ['26x26'][i] , df ['26x27'][i] , df ['26x28'][i] , df ['27x1'][i] , df ['27x2'][i] , df ['27x3'][i] , df ['27x4'][i] , df ['27x5'][i] , df ['27x6'][i] , df ['27x7'][i] , df ['27x8'][i] , df ['27x9'][i] , df ['27x10'][i] , df ['27x11'][i] , df ['27x12'][i] , df ['27x13'][i] , df ['27x14'][i] , df ['27x15'][i] , df ['27x16'][i] , df ['27x17'][i] , df ['27x18'][i] , df ['27x19'][i] , df ['27x20'][i] , df ['27x21'][i] , df ['27x22'][i] , df ['27x23'][i] , df ['27x24'][i] , df ['27x25'][i] , df ['27x26'][i] , df ['27x27'][i] , df ['27x28'][i] , df ['28x1'][i] , df ['28x2'][i] , df ['28x3'][i] , df ['28x4'][i] , df ['28x5'][i] , df ['28x6'][i] , df ['28x7'][i] , df ['28x8'][i] , df ['28x9'][i] , df ['28x10'][i] , df ['28x11'][i] , df ['28x12'][i] , df ['28x13'][i] , df ['28x14'][i] , df ['28x15'][i] , df ['28x16'][i] , df ['28x17'][i] , df ['28x18'][i] , df ['28x19'][i] , df ['28x20'][i] , df ['28x21'][i] , df ['28x22'][i] , df ['28x23'][i] , df ['28x24'][i] , df ['28x25'][i] , df ['28x26'][i] , df ['28x27'][i] , df ['28x28'][i]]
+
+    goal = df['label'][i]
+    pred = [
+    nerual_network(input=input , weigh=weigh[0]) , 
+    nerual_network(input=input , weigh=weigh[1]) , 
+    nerual_network(input=input , weigh=weigh[2]),
+    nerual_network(input=input , weigh=weigh[3]), 
+    nerual_network(input=input , weigh=weigh[4]), 
+    nerual_network(input=input , weigh=weigh[5]),
+    nerual_network(input=input , weigh=weigh[6]),
+    nerual_network(input=input , weigh=weigh[7]),
+    nerual_network(input=input , weigh=weigh[8]),
+    nerual_network(input=input , weigh=weigh[9])
+    ]
+    # pred0 = nerual_network(input=input , weigh=weigh[0])
+    # pred1 = nerual_network(input=input , weigh=weigh[1])
+    # pred2 = nerual_network(input=input , weigh=weigh[2])
+    # pred3 = nerual_network(input=input , weigh=weigh[3])
+    # pred4 = nerual_network(input=input , weigh=weigh[4])
+    # pred5 = nerual_network(input=input , weigh=weigh[5])
+    # pred6 = nerual_network(input=input , weigh=weigh[6])
+    # pred7 = nerual_network(input=input , weigh=weigh[7])
+    # pred8= nerual_network(input=input , weigh=weigh[8])
+    # pred9 = nerual_network(input=input , weigh=weigh[9])
+    #print(f"goal = {goal} \n0 = {pred[0]}\n 1 = {pred[]1}\n 2 = {pred2}\n 3 = {pred3}\n 4 = {pred4}\n 5 = {pred5}\n 6 = {pred6}\n 7 = {pred7}\n  8 = {pred8}\n 9 = {pred9}\n")
+    print(f"goal = {goal}")
+    itg = 0
+    numb = 0
+    for i in range(len(pred)):
+      print(f" {i} = {pred[i]}")
+      if pred[i] > itg :
+        numb = i
+        itg = pred[i]
+    
+    if(goal ==  numb):
+      withe = withe + 1
+    error = (pred[goal] - 1)
+    print(f"number = {numb}  \n error = {error ** 2}")
+    for i in range(len(input)):
+      weigh[goal][i] = weigh[goal][i] - (error * input[i] * alfa) 
+  print(withe)
+  return withe
+
+
+tst= [
+lrn(1000),
+lrn(1000),
+lrn(1000),
+lrn(1000),
+lrn(1000),
+lrn(1000),
+lrn(1000),
+lrn(1000),
+lrn(1000),
+lrn(1000),
+lrn(1000),
+lrn(1000),
+lrn(1000),
+lrn(1000),
+lrn(1000),
+lrn(1000)
+]
+print(str(tst))
